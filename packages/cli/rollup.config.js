@@ -23,7 +23,7 @@ const external = [
 ];
 
 export default {
-  input: 'index.js',
+  input: 'index.ts',
   output: {
     file: 'dist/gemini.js',
     format: 'es',
