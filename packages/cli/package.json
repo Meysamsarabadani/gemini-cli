@@ -22,8 +22,7 @@
     "typecheck": "tsc --noEmit"
   },
   "files": [
-    "gemini.js",
-    "node_modules/"
+    "gemini.js"
   ],
   "config": {
     "sandboxImageUri": "us-docker.pkg.dev/gemini-code-dev/gemini-cli/sandbox:0.8.0-nightly.20250925.b1da8c21"
