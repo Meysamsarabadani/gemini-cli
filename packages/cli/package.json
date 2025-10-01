@@ -12,7 +12,7 @@
     "gemini": "dist/gemini.js"
   },
   "scripts": {
-    "build": "rollup -c",
+    "build": "node ../../scripts/build_package.js",
     "start": "node dist/gemini.js",
     "debug": "node --inspect-brk dist/index.js",
     "lint": "eslint . --ext .ts,.tsx",
