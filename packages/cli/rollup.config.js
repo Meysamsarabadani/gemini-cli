@@ -27,7 +27,6 @@ export default {
   output: {
     file: 'dist/gemini.js',
     format: 'es',
-    banner: '#!/usr/bin/env node',
     sourcemap: true,
   },
   plugins: [
