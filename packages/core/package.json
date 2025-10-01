@@ -9,7 +9,7 @@
   "type": "module",
   "main": "dist/index.js",
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup -c && touch dist/.last_build ",
     "lint": "eslint . --ext .ts,.tsx",
     "format": "prettier --write .",
     "test": "vitest run",
