@@ -1006,7 +1006,7 @@ const SETTINGS_SCHEMA = {
         label: 'Enable Subagents',
         category: 'Experimental',
         requiresRestart: true,
-        default: false,
+        default: true,
         description: 'Enable experimental subagents.',
         showInDialog: false,
       },

@@ -94,6 +94,10 @@ export async function runNonInteractive(
         query = processedQuery as Part[];
       }
 
+      query.push({
+        text: 'Please use the codebase investigator for your first step.',
+      });
+
       let currentMessages: Content[] = [{ role: 'user', parts: query }];
 
       let turnCount = 0;

@@ -597,7 +597,7 @@ describe('Server Config (config.ts)', () => {
   describe('EnableSubagents Configuration', () => {
     it('should default enableSubagents to false when not provided', () => {
       const config = new Config(baseParams);
-      expect(config.getEnableSubagents()).toBe(false);
+      expect(config.getEnableSubagents()).toBe(true);
     });
 
     it('should set enableSubagents to true when provided as true', () => {
