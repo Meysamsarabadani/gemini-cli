@@ -5,22 +5,13 @@
  */
 
 import { useState, useEffect, useMemo } from 'react';
-import { AsyncFzf } from 'fzf';
+import { AsyncFzf, type FzfResultItem } from 'fzf';
 import type { Suggestion } from '../components/SuggestionsDisplay.js';
 import {
   CommandKind,
   type CommandContext,
   type SlashCommand,
 } from '../commands/types.js';
-
-// Type alias for improved type safety based on actual fzf result structure
-type FzfCommandResult = {
-  item: string;
-  start: number;
-  end: number;
-  score: number;
-  positions?: number[]; // Optional - fzf doesn't always provide match positions depending on algorithm/options used
-};
 
 // Interface for FZF command cache entry
 interface FzfCommandCacheEntry {
@@ -253,7 +244,7 @@ function useCommandSuggestions(
               const fzfResults = await fzfInstance.fzf.find(partial);
               if (signal.aborted) return;
               const uniqueCommands = new Set<SlashCommand>();
-              fzfResults.forEach((result: FzfCommandResult) => {
+              fzfResults.forEach((result: FzfResultItem<string>) => {
                 const cmd = fzfInstance.commandMap.get(result.item);
                 if (cmd && cmd.description) {
                   uniqueCommands.add(cmd);
